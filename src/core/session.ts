@@ -9,7 +9,7 @@ import { WalletError, ErrorCodes } from '../output/errors.js';
 const TOKEN_PREFIX = 'wlt_';
 const TOKEN_ID_SIZE = 16;
 const TOKEN_SECRET_SIZE = 32;
-const HKDF_INFO = 'wallet-cli-session-key';
+const HKDF_INFO = 'agent-wallet-cli-session-key';
 const DEFAULT_DURATION = 3600; // 1 hour
 const MAX_DURATION = 86400; // 24 hours
 
@@ -181,12 +181,12 @@ export async function revokeSession(walletDir: string, walletName: string): Prom
 
 /**
  * Resolve the session token from various sources.
- * Priority: explicit --token flag > WALLET_CLI_TOKEN env > session file
+ * Priority: explicit --token flag > AGENT_WALLET_CLI_TOKEN env > session file
  */
 export async function resolveToken(walletDir: string, walletName: string, explicitToken?: string): Promise<string> {
   if (explicitToken) return explicitToken;
 
-  const envToken = process.env.WALLET_CLI_TOKEN;
+  const envToken = process.env.AGENT_WALLET_CLI_TOKEN;
   if (envToken) return envToken;
 
   const tokenPath = getTokenFilePath(walletDir, walletName);
@@ -194,5 +194,5 @@ export async function resolveToken(walletDir: string, walletName: string, explic
     return (await readFile(tokenPath, 'utf-8')).trim();
   }
 
-  throw new WalletError(ErrorCodes.ERR_NO_TOKEN, 'No session token provided. Use --token, WALLET_CLI_TOKEN env, or run "wallet-cli unlock" first.');
+  throw new WalletError(ErrorCodes.ERR_NO_TOKEN, 'No session token provided. Use --token, AGENT_WALLET_CLI_TOKEN env, or run "agent-wallet-cli unlock" first.');
 }

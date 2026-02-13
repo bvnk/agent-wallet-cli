@@ -13,7 +13,7 @@ describe('session', () => {
   let walletDir: string;
 
   beforeEach(async () => {
-    walletDir = await mkdtemp(join(tmpdir(), 'wallet-cli-session-'));
+    walletDir = await mkdtemp(join(tmpdir(), 'agent-wallet-cli-session-'));
     await createKeystore(walletDir, 'default', TEST_MNEMONIC, TEST_PASSWORD);
   });
 

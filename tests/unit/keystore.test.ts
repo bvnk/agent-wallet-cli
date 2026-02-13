@@ -12,7 +12,7 @@ describe('keystore', () => {
   let walletDir: string;
 
   beforeEach(async () => {
-    walletDir = await mkdtemp(join(tmpdir(), 'wallet-cli-test-'));
+    walletDir = await mkdtemp(join(tmpdir(), 'agent-wallet-cli-test-'));
   });
 
   afterEach(async () => {

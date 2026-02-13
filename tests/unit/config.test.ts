@@ -31,9 +31,9 @@ describe('config', () => {
   });
 
   describe('getDefaultWalletDir', () => {
-    it('should return a path ending with .wallet-cli', () => {
+    it('should return a path ending with .agent-wallet-cli', () => {
       const dir = getDefaultWalletDir();
-      expect(dir).toMatch(/\.wallet-cli$/);
+      expect(dir).toMatch(/\.agent-wallet-cli$/);
     });
   });
 

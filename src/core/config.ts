@@ -109,7 +109,7 @@ export const WELL_KNOWN_TOKENS: Record<string, Record<string, Record<string, Wel
 };
 
 export function getDefaultWalletDir(): string {
-  return join(homedir(), '.wallet-cli');
+  return join(homedir(), '.agent-wallet-cli');
 }
 
 export function getKeystoreDir(walletDir: string): string {
@@ -135,7 +135,7 @@ export async function loadConfig(walletDir: string): Promise<AppConfig> {
   // Apply env var overrides for RPC URLs
   for (const [chain, networks] of Object.entries(config.networks)) {
     for (const [network, netConfig] of Object.entries(networks)) {
-      const envKey = `WALLET_CLI_RPC_${chain.toUpperCase()}_${network.toUpperCase()}`;
+      const envKey = `AGENT_WALLET_CLI_RPC_${chain.toUpperCase()}_${network.toUpperCase()}`;
       const envUrl = process.env[envKey];
       if (envUrl) {
         netConfig.rpcUrl = envUrl;

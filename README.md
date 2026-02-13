@@ -81,7 +81,7 @@ All commands accept these options:
 | Flag | Description | Default |
 |------|-------------|---------|
 | `--format <format>` | Output format (`json` or `text`) | `json` |
-| `--wallet-dir <path>` | Wallet storage directory | `~/.wallet-cli` |
+| `--wallet-dir <path>` | Wallet storage directory | `~/.agent-wallet-cli` |
 | `--quiet` | Suppress output | |
 
 ### Wallet Management
@@ -246,10 +246,10 @@ agent-wallet-cli balance --token "$TOKEN" --chain ethereum --format json
 agent-wallet-cli send --token "$TOKEN" --chain ethereum --to 0x... --amount 0.01
 ```
 
-**Environment variable** — set `WALLET_CLI_TOKEN` to avoid passing `--token` every time:
+**Environment variable** — set `AGENT_WALLET_CLI_TOKEN` to avoid passing `--token` every time:
 
 ```bash
-export WALLET_CLI_TOKEN=$(agent-wallet-cli unlock --password "pass" --format json | jq -r '.token')
+export AGENT_WALLET_CLI_TOKEN=$(agent-wallet-cli unlock --password "pass" --format json | jq -r '.token')
 agent-wallet-cli balance --chain ethereum
 agent-wallet-cli send --chain ethereum --to 0x... --amount 0.01
 ```
@@ -283,7 +283,7 @@ Wallets are encrypted at rest using a two-layer scheme:
 1. **Key derivation**: Argon2id (time_cost=3, memory_cost=64 MB, parallelism=4) derives a 32-byte key from your password + random salt
 2. **Encryption**: AES-256-GCM encrypts the mnemonic with a random 12-byte IV and produces a 16-byte authentication tag
 
-Keystore files are stored in `~/.wallet-cli/keystores/` with `0600` permissions.
+Keystore files are stored in `~/.agent-wallet-cli/keystores/` with `0600` permissions.
 
 ### Session Tokens
 
@@ -345,7 +345,7 @@ agent-wallet-cli networks
 
 | Variable | Description |
 |----------|-------------|
-| `WALLET_CLI_TOKEN` | Session token (avoids `--token` flag on every command) |
+| `AGENT_WALLET_CLI_TOKEN` | Session token (avoids `--token` flag on every command) |
 
 ## Development
 

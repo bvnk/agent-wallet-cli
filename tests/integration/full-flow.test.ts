@@ -35,7 +35,7 @@ describe('full CLI flow', () => {
   let walletDir: string;
 
   beforeEach(async () => {
-    walletDir = await mkdtemp(join(tmpdir(), 'wallet-cli-integration-'));
+    walletDir = await mkdtemp(join(tmpdir(), 'agent-wallet-cli-integration-'));
   });
 
   afterEach(async () => {
@@ -44,7 +44,7 @@ describe('full CLI flow', () => {
 
   it('should show help', async () => {
     const { stdout } = await execAsync('node', [CLI, '--help']);
-    expect(stdout).toContain('wallet-cli');
+    expect(stdout).toContain('agent-wallet-cli');
     expect(stdout).toContain('init');
     expect(stdout).toContain('send');
   });
