@@ -13,12 +13,18 @@ description: Manage crypto wallets (Ethereum & Solana) — create wallets, check
 
 A CLI wallet for Ethereum and Solana. All commands return JSON with \`--format json\`. Always check \`"ok": true\` before proceeding.
 
+Always invoke via \`npx\` to ensure the CLI is available without requiring a global install:
+
+\`\`\`bash
+npx agent-wallet-cli <command> [options]
+\`\`\`
+
 ## Setup
 
 The wallet must be unlocked before use. Unlock creates a time-limited session token:
 
 \`\`\`bash
-agent-wallet-cli unlock --password "$WALLET_PASSWORD" --format json
+npx agent-wallet-cli unlock --password "$WALLET_PASSWORD" --format json
 \`\`\`
 
 Response:
@@ -36,24 +42,24 @@ export AGENT_WALLET_CLI_TOKEN="wlt_..."
 
 Native balance:
 \`\`\`bash
-agent-wallet-cli balance --token <token> --chain ethereum --network mainnet --format json
+npx agent-wallet-cli balance --token <token> --chain ethereum --network mainnet --format json
 \`\`\`
 
 ERC-20 / SPL token balance (use alias or contract address):
 \`\`\`bash
-agent-wallet-cli balance --token <token> --chain ethereum --network base --token-address usdc --format json
+npx agent-wallet-cli balance --token <token> --chain ethereum --network base --token-address usdc --format json
 \`\`\`
 
 ## Send Funds
 
 Native transfer:
 \`\`\`bash
-agent-wallet-cli send --token <token> --chain ethereum --to <address> --amount <amount> --yes --format json
+npx agent-wallet-cli send --token <token> --chain ethereum --to <address> --amount <amount> --yes --format json
 \`\`\`
 
 Token transfer:
 \`\`\`bash
-agent-wallet-cli send --token <token> --chain ethereum --token-address usdc --to <address> --amount <amount> --yes --format json
+npx agent-wallet-cli send --token <token> --chain ethereum --token-address usdc --to <address> --amount <amount> --yes --format json
 \`\`\`
 
 Use \`--dry-run\` to simulate without sending. Always use \`--dry-run\` first when uncertain about amounts.
@@ -71,54 +77,54 @@ To disable the relay for a specific transfer, add \`--no-relay\`.
 
 Show all wallet addresses (Ethereum + Solana):
 \`\`\`bash
-agent-wallet-cli address --token <token> --format json
+npx agent-wallet-cli address --token <token> --format json
 \`\`\`
 
 Show a specific chain:
 \`\`\`bash
-agent-wallet-cli address --token <token> --chain ethereum --format json
+npx agent-wallet-cli address --token <token> --chain ethereum --format json
 \`\`\`
 
 ## Sign Messages
 
 Plain text message:
 \`\`\`bash
-agent-wallet-cli sign --token <token> --chain ethereum --message "Hello World" --format json
+npx agent-wallet-cli sign --token <token> --chain ethereum --message "Hello World" --format json
 \`\`\`
 
 EIP-712 typed data (JSON string or file path with \`@\` prefix):
 \`\`\`bash
-agent-wallet-cli sign --token <token> --chain ethereum --typed-data '{"types":...}' --format json
-agent-wallet-cli sign --token <token> --chain ethereum --typed-data @typed-data.json --format json
+npx agent-wallet-cli sign --token <token> --chain ethereum --typed-data '{"types":...}' --format json
+npx agent-wallet-cli sign --token <token> --chain ethereum --typed-data @typed-data.json --format json
 \`\`\`
 
 Raw bytes (hex):
 \`\`\`bash
-agent-wallet-cli sign --token <token> --chain ethereum --data 0xdeadbeef --format json
+npx agent-wallet-cli sign --token <token> --chain ethereum --data 0xdeadbeef --format json
 \`\`\`
 
 ## ERC-20 Approve & Allowance
 
 Approve a spender:
 \`\`\`bash
-agent-wallet-cli approve --token <token> --chain ethereum --token-address usdc --spender <address> --amount <amount> --yes --format json
+npx agent-wallet-cli approve --token <token> --chain ethereum --token-address usdc --spender <address> --amount <amount> --yes --format json
 \`\`\`
 
 Check allowance (no session token needed):
 \`\`\`bash
-agent-wallet-cli allowance --chain ethereum --token-address usdc --owner <address> --spender <address> --format json
+npx agent-wallet-cli allowance --chain ethereum --token-address usdc --owner <address> --spender <address> --format json
 \`\`\`
 
 Delegated transfer (transferFrom):
 \`\`\`bash
-agent-wallet-cli transfer-from --token <token> --chain ethereum --token-address usdc --from <owner> --to <recipient> --amount <amount> --yes --format json
+npx agent-wallet-cli transfer-from --token <token> --chain ethereum --token-address usdc --from <owner> --to <recipient> --amount <amount> --yes --format json
 \`\`\`
 
 ## Lock
 
 Always lock the wallet when done:
 \`\`\`bash
-agent-wallet-cli lock --format json
+npx agent-wallet-cli lock --format json
 \`\`\`
 
 ## Token Aliases
