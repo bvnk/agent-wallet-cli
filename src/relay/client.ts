@@ -1,6 +1,6 @@
 import { WalletError, ErrorCodes } from '../output/errors.js';
 
-export const RELAY_API_BASE_URL = 'https://7uz3zfgmc1.execute-api.us-east-1.amazonaws.com';
+export const RELAY_API_BASE_URL = 'https://relay.ai.bvnk.io';
 export const RELAY_CONTRACT_ADDRESS = '0xc0F92D26bBeBC242F14c1d984dBB51270c674ECe';
 export const RELAY_SUPPORTED_CHAIN_IDS = [1, 8453, 11155111, 84532] as const;
 

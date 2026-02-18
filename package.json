@@ -38,11 +38,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/donald-jackson/agent-wallet-cli.git"
+    "url": "git+https://github.com/bvnk/agent-wallet-cli.git"
   },
-  "homepage": "https://github.com/donald-jackson/agent-wallet-cli#readme",
+  "homepage": "https://github.com/bvnk/agent-wallet-cli#readme",
   "bugs": {
-    "url": "https://github.com/donald-jackson/agent-wallet-cli/issues"
+    "url": "https://github.com/bvnk/agent-wallet-cli/issues"
   },
   "engines": {
     "node": ">=18"

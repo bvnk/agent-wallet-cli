@@ -16,7 +16,7 @@ describe('relay/client', () => {
     });
 
     it('should export the relay API base URL', () => {
-      expect(RELAY_API_BASE_URL).toBe('https://7uz3zfgmc1.execute-api.us-east-1.amazonaws.com');
+      expect(RELAY_API_BASE_URL).toBe('https://relay.ai.bvnk.io');
     });
 
     it('should export supported chain IDs', () => {

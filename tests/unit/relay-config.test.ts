@@ -8,7 +8,7 @@ import {
 describe('relay config', () => {
   describe('DEFAULT_RELAY_API_BASE_URL', () => {
     it('should export the default relay API URL', () => {
-      expect(DEFAULT_RELAY_API_BASE_URL).toBe('https://7uz3zfgmc1.execute-api.us-east-1.amazonaws.com');
+      expect(DEFAULT_RELAY_API_BASE_URL).toBe('https://relay.ai.bvnk.io');
     });
   });
 

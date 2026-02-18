@@ -67,7 +67,7 @@ agent-wallet-cli <command> [options]
 ### From source
 
 ```bash
-git clone https://github.com/donald-jackson/agent-wallet-cli.git
+git clone https://github.com/bvnk/agent-wallet-cli.git
 cd agent-wallet-cli
 npm install
 npm run build
@@ -149,7 +149,7 @@ npx agent-wallet-cli install-skill --global
 Or use the universal [Agent Skills](https://agentskills.io) installer:
 
 ```bash
-npx skills add donald-jackson/agent-wallet-cli
+npx skills add bvnk/agent-wallet-cli
 ```
 
 ### Using with OpenClaw
@@ -501,7 +501,7 @@ agent-wallet-cli networks
 ### Build from source
 
 ```bash
-git clone https://github.com/donald-jackson/agent-wallet-cli.git
+git clone https://github.com/bvnk/agent-wallet-cli.git
 cd agent-wallet-cli
 npm install
 npm run build

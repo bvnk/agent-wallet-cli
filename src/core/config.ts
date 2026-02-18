@@ -133,7 +133,7 @@ export function getConfigFilePath(walletDir: string): string {
   return join(walletDir, 'config.json');
 }
 
-export const DEFAULT_RELAY_API_BASE_URL = 'https://7uz3zfgmc1.execute-api.us-east-1.amazonaws.com';
+export const DEFAULT_RELAY_API_BASE_URL = 'https://relay.ai.bvnk.io';
 
 export async function loadConfig(walletDir: string): Promise<AppConfig> {
   const configPath = getConfigFilePath(walletDir);

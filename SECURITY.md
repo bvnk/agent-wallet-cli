@@ -155,4 +155,4 @@ The following security practices are implemented and should be maintained:
 ## Reporting Security Issues
 
 If you discover a security vulnerability, please report it responsibly by opening a private security advisory at:
-https://github.com/donald-jackson/agent-wallet-cli/security/advisories/new
+https://github.com/bvnk/agent-wallet-cli/security/advisories/new
