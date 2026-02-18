@@ -127,6 +127,24 @@ All commands accept these options:
 
 ## AI Agent Integration
 
+### Install as Claude Code Skill
+
+Install the agent-wallet-cli skill so Claude Code (or any Agent Skills-compatible tool) knows how to use the wallet:
+
+```bash
+# Project-scoped (writes to .claude/skills/ in current directory)
+npx agent-wallet-cli install-skill
+
+# User-wide (writes to ~/.claude/skills/)
+npx agent-wallet-cli install-skill --global
+```
+
+Or use the universal [Agent Skills](https://agentskills.io) installer:
+
+```bash
+npx skills add donald-jackson/agent-wallet-cli
+```
+
 ### Using with OpenClaw
 
 #### Option A: AgentSkill (recommended)

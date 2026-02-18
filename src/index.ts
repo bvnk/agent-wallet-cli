@@ -15,6 +15,7 @@ import { registerSignCommand } from './commands/sign.js';
 import { registerNetworksCommand } from './commands/networks.js';
 import { registerApprovalsCommand } from './commands/approvals.js';
 import { registerExportCommand } from './commands/export.js';
+import { registerInstallSkillCommand } from './commands/install-skill.js';
 
 const program = new Command();
 
@@ -41,5 +42,6 @@ registerApprovalsCommand(program);
 registerSignCommand(program);
 registerNetworksCommand(program);
 registerExportCommand(program);
+registerInstallSkillCommand(program);
 
 program.parse();
